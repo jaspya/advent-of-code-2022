@@ -13,3 +13,9 @@
 (defn split-string
   [^Pattern re ^CharSequence s]
   (str/split s re))
+
+(defn split-vector-at
+  [vector at]
+  (let [split (- (count vector) at)]
+    [(subvec vector 0 split)
+     (subvec vector split)]))
