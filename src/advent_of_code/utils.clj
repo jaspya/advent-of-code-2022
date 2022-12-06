@@ -2,6 +2,10 @@
   (:require [clojure.string :as str])
   (:import java.util.regex.Pattern))
 
+(defn all-unique?
+  [collection]
+  (= (count collection) (count (set collection))))
+
 (defn parse-int
   [^CharSequence string]
   (Integer/parseInt string))
