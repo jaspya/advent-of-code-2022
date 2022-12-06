@@ -1,5 +1,6 @@
 (ns advent-of-code.2022.day2
-  (:require [clojure.string :as str]))
+  (:require [advent-of-code.utils :as utils]
+            [clojure.string :as str]))
 
 (def game-score
   {["A" "X"] 3 ["B" "X"] 0 ["C" "X"] 6
@@ -13,7 +14,7 @@
 
 (defn- parse-file
   [file-path]
-  (->> (str/split (slurp file-path) #"\n")
+  (->> (utils/read-file file-path)
        (map #(str/split % #" "))))
 
 (defn- solve
